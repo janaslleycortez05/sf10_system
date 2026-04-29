@@ -1,16 +1,23 @@
-<?php $role = $_SESSION['user']['role']; ?>
+<!-- General User sidebar -->
+<?php $current = basename($_SERVER['PHP_SELF']); ?>
+<aside class="sidebar">
+  <div class="sidebar-section">Menu</div>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <a href="user_dashboard.php" class="<?= $current === 'user_dashboard.php' ? 'active' : '' ?>">
+    <i class="bi bi-grid-1x2"></i> Dashboard
+  </a>
 
-<div class="sidebar">
-  <br>
-  <a class="tab-link" href="user_dashboard.php"><i class="bi bi-house-door-fill"></i>&ensp;Dashboard</a><br>
-  <a class="tab-link" href="request.php"><i class="bi bi-send-plus-fill"></i>&ensp;New Request</a><br>
-  <a class="tab-link" href="#"><i class="bi bi-person-circle"></i>&ensp;Profile</a>
+  <a href="request.php" class="<?= $current === 'request.php' ? 'active' : '' ?>">
+    <i class="bi bi-plus-circle"></i> New Request
+  </a>
 
-  <?php if ($role === 'admin'): ?>
-    <a href="admin_dashboard.php">Admin Panel</a>
-  <?php endif; ?>
-</div>
+  <a href="#" class="<?= $current === 'profile.php' ? 'active' : '' ?>">
+    <i class="bi bi-person-circle"></i> Profile
+  </a>
+
+  <div class="sidebar-spacer"></div>
+
+  <a href="logout.php" class="sidebar-logout">
+    <i class="bi bi-box-arrow-left"></i> Logout
+  </a>
+</aside>
