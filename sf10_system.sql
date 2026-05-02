@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2026 at 07:06 PM
+-- Generation Time: May 02, 2026 at 05:28 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -51,19 +51,53 @@ CREATE TABLE `requests` (
   `user_id` int(11) DEFAULT NULL,
   `student_name` varchar(100) DEFAULT NULL,
   `lrn` varchar(50) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `school_year` varchar(20) DEFAULT NULL,
   `purpose` varchar(100) DEFAULT NULL,
-  `file` varchar(255) DEFAULT NULL,
+  `valid_id` varchar(255) DEFAULT NULL,
   `status` varchar(50) DEFAULT 'Pending',
-  `delivery_method` varchar(20) DEFAULT NULL
+  `delivery_method` varchar(20) DEFAULT NULL,
+  `email_delivery` varchar(150) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `requests`
 --
 
-INSERT INTO `requests` (`id`, `user_id`, `student_name`, `lrn`, `purpose`, `file`, `status`, `delivery_method`) VALUES
-(1, 2, 'Aslley', '232', 'Transfer', NULL, 'Released', NULL),
-(2, 3, 'Aslley', '2018-12535', 'Employment', NULL, 'Pending', 'Email');
+INSERT INTO `requests` (`id`, `user_id`, `student_name`, `lrn`, `date_of_birth`, `school_year`, `purpose`, `valid_id`, `status`, `delivery_method`, `email_delivery`, `created_at`) VALUES
+(1, 2, 'Aslley', '232', NULL, NULL, 'Transfer', NULL, 'Released', NULL, NULL, '2026-05-02 02:44:47'),
+(2, 3, 'Aslley', '2018-12535', NULL, NULL, 'Employment', NULL, 'Released', 'Email', NULL, '2026-05-02 02:44:47'),
+(3, 4, 'Zuko', '2008-20133', NULL, NULL, 'Personal', NULL, 'Rejected', 'Pickup', NULL, '2026-05-02 02:44:47'),
+(4, 3, 'Jan Aslley Cortez', '123456789', '2005-04-02', '2018', 'Employment', 'id_3_1777690570.jpg', 'Pending', 'Pickup', 'aslley@test.com', '2026-05-02 02:56:10'),
+(5, 3, 'Aslley', '7888', '2023-01-31', '2026', 'Employment', 'id_3_1777690757.jpg', 'Rejected', 'Pickup', 'aslley@test.com', '2026-05-02 02:59:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sf10_records`
+--
+
+CREATE TABLE `sf10_records` (
+  `id` int(11) NOT NULL,
+  `student_name` varchar(100) NOT NULL,
+  `lrn` varchar(50) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `grade_level` varchar(20) DEFAULT NULL,
+  `school_year` varchar(20) DEFAULT NULL,
+  `section` varchar(50) DEFAULT NULL,
+  `sf10_file` varchar(255) DEFAULT NULL,
+  `notes` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `sf10_records`
+--
+
+INSERT INTO `sf10_records` (`id`, `student_name`, `lrn`, `date_of_birth`, `grade_level`, `school_year`, `section`, `sf10_file`, `notes`, `created_at`, `updated_at`) VALUES
+(3, 'Jan Aslley Cortez', '201812535', '2005-04-02', 'Grade 6', '', 'Jose Rizal', 'sf10_Jan_Aslley_Cortez_1777692286.pdf', '', '2026-05-02 03:24:46', '2026-05-02 03:24:46');
 
 -- --------------------------------------------------------
 
@@ -105,6 +139,14 @@ ALTER TABLE `requests`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sf10_records`
+--
+ALTER TABLE `sf10_records`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_student_name` (`student_name`),
+  ADD KEY `idx_lrn` (`lrn`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -124,13 +166,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `sf10_records`
+--
+ALTER TABLE `sf10_records`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

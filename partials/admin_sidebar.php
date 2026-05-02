@@ -7,8 +7,8 @@
     <i class="bi bi-speedometer2"></i> Dashboard
   </a>
 
-  <a href="#" class="<?= $current === 'records.php' ? 'active' : '' ?>">
-    <i class="bi bi-inbox"></i> Records
+  <a href="records.php" class="<?= $current === 'records.php' ? 'active' : '' ?>">
+    <i class="bi bi-archive"></i> Records
   </a>
 
   <a href="users.php" class="<?= $current === 'users.php' ? 'active' : '' ?>">
