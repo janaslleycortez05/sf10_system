@@ -11,7 +11,7 @@
     <i class="bi bi-plus-circle"></i> New Request
   </a>
 
-  <a href="#" class="<?= $current === 'profile.php' ? 'active' : '' ?>">
+  <a href="profile.php" class="<?= $current === 'profile.php' ? 'active' : '' ?>">
     <i class="bi bi-person-circle"></i> Profile
   </a>
 

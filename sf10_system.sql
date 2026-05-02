@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2026 at 05:28 AM
+-- Generation Time: May 02, 2026 at 11:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -92,12 +92,6 @@ CREATE TABLE `sf10_records` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `sf10_records`
---
-
-INSERT INTO `sf10_records` (`id`, `student_name`, `lrn`, `date_of_birth`, `grade_level`, `school_year`, `section`, `sf10_file`, `notes`, `created_at`, `updated_at`) VALUES
-(3, 'Jan Aslley Cortez', '201812535', '2005-04-02', 'Grade 6', '', 'Jose Rizal', 'sf10_Jan_Aslley_Cortez_1777692286.pdf', '', '2026-05-02 03:24:46', '2026-05-02 03:24:46');
 
 -- --------------------------------------------------------
 
@@ -109,6 +103,12 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `guardian_name` varchar(100) DEFAULT NULL,
+  `guardian_relation` varchar(50) DEFAULT NULL,
+  `guardian_phone` varchar(20) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
   `role` varchar(20) DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -160,25 +160,24 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `sf10_records`
 --
 ALTER TABLE `sf10_records`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
