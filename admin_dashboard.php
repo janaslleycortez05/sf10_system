@@ -115,7 +115,7 @@ function statusBadge($s) {
         <tbody>
           <?php foreach ($rows as $row): ?>
           <tr>
-            <td><strong>#<?= $row['id'] ?></strong></td>
+            <td><a href="view_request.php?id=<?php echo $row['id']; ?>"><strong>#<?= $row['id'] ?></strong></a></td>
             <td><?= htmlspecialchars($row['student_name']) ?></td>
             <td><code style="font-size:12px;background:#f1f5f9;padding:2px 6px;border-radius:4px;"><?= htmlspecialchars($row['lrn']) ?></code></td>
             <td><?= htmlspecialchars($row['purpose']) ?></td>
