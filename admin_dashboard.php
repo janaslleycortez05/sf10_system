@@ -141,8 +141,8 @@ function statusBadge($s) {
                     <i class="bi bi-x-lg"></i> Reject
                   </a>
                 <?php elseif ($row['status'] === 'Approved'): ?>
-                  <a href="update_status.php?id=<?= $row['id'] ?>&status=Released" class="btn btn-primary btn-sm">
-                    <i class="bi bi-send"></i> Release
+                  <a href="generate_document.php?id=<?= $row['id'] ?>" class="btn btn-purple btn-sm">
+                    <i class="bi bi-file-earmark-text"></i> Generate
                   </a>
                 <?php else: ?>
                   <span style="font-size:12px;color:var(--text-muted);font-style:italic;">No actions</span>
