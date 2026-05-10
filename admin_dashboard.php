@@ -19,8 +19,7 @@ function statusBadge($s) {
     'Pending'    => 'badge-pending',
     'Approved'   => 'badge-approved',
     'Rejected'   => 'badge-rejected',
-    'Released'   => 'badge-released',
-    'Processing' => 'badge-processing',
+    'Released'   => 'badge-released'
   ];
   $cls = $map[$s] ?? 'badge-pending';
   return "<span class='badge $cls'>$s</span>";
