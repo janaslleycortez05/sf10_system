@@ -128,8 +128,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <label id="uploadArea" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:2px dashed var(--border);border-radius:var(--radius);padding:32px 20px;cursor:pointer;transition:var(--transition);background:#fafbfc;">
                 <i class="bi bi-cloud-arrow-up" style="font-size:32px;color:var(--blue);"></i>
                 <div style="font-weight:600;font-size:13px;color:var(--text);">Click to upload or drag and drop</div>
-                <div style="font-size:11.5px;color:var(--text-muted);">JPG, PNG, PDF — max 5MB</div>
-                <input type="file" name="valid_id" id="validIdInput" accept=".jpg,.jpeg,.png,.pdf"
+                <div style="font-size:11.5px;color:var(--text-muted);">JPG, PNG, PDF, DOCX — max 5MB</div>
+                <input type="file" name="valid_id" id="validIdInput" accept=".jpg,.jpeg,.png,.pdf,.docx"
                   style="display:none;" onchange="previewFile(this)">
               </label>
               <div id="filePreview" style="display:none;margin-top:12px;padding:10px 14px;background:#f1f5f9;border-radius:var(--radius-sm);align-items:center;gap:10px;">

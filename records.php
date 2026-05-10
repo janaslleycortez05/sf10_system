@@ -268,8 +268,8 @@ $total   = count($records);
 						<input name="section" type="text" class="form-control" placeholder="e.g. Mabini">
 					</div>
 					<div class="form-group" style="grid-column:1/-1;">
-						<label class="form-label">Upload SF10 File <span style="font-weight:400;color:var(--text-muted);">(PDF, JPG, PNG)</span></label>
-						<input name="sf10_file" type="file" accept=".pdf,.jpg,.jpeg,.png" class="form-control">
+						<label class="form-label">Upload SF10 File <span style="font-weight:400;color:var(--text-muted);">(PDF, JPG, PNG, DOCX)</span></label>
+						<input name="sf10_file" type="file" accept=".pdf,.jpg,.jpeg,.png,.docx" class="form-control">
 					</div>
 					<div class="form-group" style="grid-column:1/-1;">
 						<label class="form-label">Notes</label>
@@ -331,7 +331,7 @@ $total   = count($records);
 					<div class="form-group" style="grid-column:1/-1;">
 						<label class="form-label">Replace SF10 File <span style="font-weight:400;color:var(--text-muted);">(leave blank to keep existing)</span></label>
 						<div id="currentFile" style="font-size:12px;color:var(--text-muted);margin-bottom:6px;"></div>
-						<input name="sf10_file" type="file" accept=".pdf,.jpg,.jpeg,.png" class="form-control">
+						<input name="sf10_file" type="file" accept=".pdf,.jpg,.jpeg,.png,.docx" class="form-control">
 					</div>
 					<div class="form-group" style="grid-column:1/-1;">
 						<label class="form-label">Notes</label>
